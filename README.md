@@ -1,8 +1,10 @@
 # SemesterApplication
 
 Description of the application:
+
 This application is a combination of multiple features that we use daily on our phones and aims at gathering them all in order to make our everyday life better regarding time and how we use it. The inspiration behind it also comes from the way I use my schedule daily and how I usually want to interact with my friends and family when I have work to do. From what I noticed about people around me and my experiences, not everyone wants to unnecessarily be disturbed or is comfortable with potentially disturbing their friends or family. My goal is to provide another option for people to organize and be aware of what others are doing.
 The application is focused on maintaining a schedule with tasks on different time periods (days, weeks, months) and varying by importance and difficulty. The main features consist of creating and editing mentioned schedule and visualizing other contacts’ schedules. Based on this information, the user will be able to use other applications from their phone (call, SMS, email) to quickly get in contact with a friend. The details needed to do so will be stored in an account with data written by the user. Other details and small features will consist of different themes, languages and relevant grouped contacts (family, friends, work, custom).
+
 The app will use Android 6.0 version. 
 
 Requirements:
