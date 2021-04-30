@@ -8,4 +8,20 @@
         <item>Default</item>
         <item>Dark</item>
     </string-array>
+    <string name="login">Log in</string>
+    <string name="signup">Sign-Up</string>
+    <string name="family">Family</string>
+    <string name="job" translatable="false">Job</string>
+    <string name="custom" translatable="false">Custom</string>
+    <string name="own">Own</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="friends">Friends</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="group">Group</string>
+
+    <string name="drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="drawer_close" translatable="false">Close navigation drawer</string>
 </resources>

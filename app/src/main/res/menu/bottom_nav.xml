@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/family"
+        android:icon="@drawable/square"
+        android:title="@string/family" />
+
+    <item
+        android:id="@+id/friends"
+        android:icon="@drawable/square"
+        android:title="@string/friends" />
+
+    <item
+        android:id="@+id/work"
+        android:icon="@drawable/square"
+        android:title="@string/job" />
+
+    <item
+        android:id="@+id/custom"
+        android:icon="@drawable/square"
+        android:title="@string/custom" />
+
+    <item
+        android:id="@+id/own"
+        android:icon="@drawable/square"
+        android:title="@string/own" />
+</menu>

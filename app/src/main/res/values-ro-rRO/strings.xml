@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SemesterApplication</string>
+    <string name="login">Logheaza-te</string>
+    <string name="signup">Inregistreaza-te</string>
+    <string name="family">Familie</string>
+    <string name="own">Personal</string>
+    <string name="username">Nume utitlizator</string>
+    <string name="password">Parola</string>
+    <string name="friends">Prieteni</string>
+    <string name="name">Nume</string>
+    <string name="phone">Telefon</string>
+    <string name="group">Grup</string>
+</resources>

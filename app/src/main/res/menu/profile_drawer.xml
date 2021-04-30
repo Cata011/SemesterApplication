@@ -1,22 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:checkableBehavior="single">
+
+   <group android:id="@+id/photoAndSettings">
+
+       <item android:id="@+id/photoIcon"
+           android:icon="@drawable/person"
+           android:title="" />
+
+       <item android:id="@+id/settings"
+           android:icon="@drawable/settings"
+           android:title="" />
+
+   </group>
+
+
+    <group android:id="@+id/personalDetails">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/search"
-            android:title="Placeholder" />
+            android:id="@+id/name"
+            android:title="@string/name" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/menu"
-            android:title="nth" />
+            android:id="@+id/phone"
+            android:title="@string/phone" />
+        <item android:id="@+id/email"
+            android:title="@string/email" />
+        <item android:id="@+id/group"
+            android:title="@string/group" />
     </group>
 
-    <item android:title="Communicate">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_baseline_edit_24"
-                android:title="sth" />
-        </menu>
-    </item>
+    <group android:id="@+id/options">
+        <item android:id="@+id/editProfile"
+            android:icon="@drawable/edit"
+            android:title="" />
+        <item android:id="@+id/contactPhone"
+            android:icon="@drawable/phone"
+            android:title="" />
+        <item android:id="@+id/contactEmail"
+            android:icon="@drawable/email"
+            android:title="" />
+        <item android:id="@+id/contactMessage"
+            android:icon="@drawable/message"
+            android:title="" />
+    </group>
+
 </menu>
