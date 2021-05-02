@@ -40,6 +40,8 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         theme.setAdapter(themeAdapter);
         language.setAdapter(languageAdapter);
 
+
+
 //TODO        signUp.setOnClickListener(new View.OnClickListener() {
 //
 //                                  }
