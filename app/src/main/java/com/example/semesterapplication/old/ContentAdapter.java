@@ -1,4 +1,4 @@
-package com.example.semesterapplication;
+package com.example.semesterapplication.old;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,16 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.semesterapplication.R;
+
 import java.util.ArrayList;
-import java.util.List;
 
-public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> implements Filterable {
+public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHolder> implements Filterable {
 
-    private ArrayList<Task> tasks;
+    private ArrayList<Task> tasks;  //TODO: fix for both tasks and people
     private ArrayList<Task> tasks1;
     final private OnListItemClickListener onListItemClickListener;
 
-    TaskAdapter(ArrayList<Task> tasks, OnListItemClickListener onListItemClickListener)
+    ContentAdapter(ArrayList<Task> tasks, OnListItemClickListener onListItemClickListener)
     {
         this.tasks = tasks;
         this.tasks1 = tasks;
@@ -28,7 +29,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> im
 
     @NonNull
     @Override
-    public TaskAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ContentAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view = inflater.inflate(R.layout.tasklist_item, parent, false);
         return new ViewHolder(view);
@@ -36,7 +37,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> im
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TaskAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ContentAdapter.ViewHolder holder, int position) {
         holder.PLACEHOLDER_SOMESTUFF.setText(tasks.get(position).getPLACEHOLDER_SOMESTUFF());
         holder.PLACEHOLDER_SOMEOTHERSTUFF.setText(tasks.get(position).getPLACEHOLDER_SOMEOTHERSTUFF());
 

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+<!--    <group android:id="@+id/photoAndSettings">-->
+
+<!--        <item-->
+<!--            android:id="@+id/photoIcon"-->
+<!--            android:icon="@drawable/person"-->
+<!--            android:title="" />-->
+
+<!--        <item-->
+<!--            android:id="@+id/settings"-->
+<!--            android:icon="@drawable/settings"-->
+<!--            android:title="" />-->
+
+<!--    </group>-->
+
+
+<!--    <group android:id="@+id/personalDetails">-->
+<!--        <item-->
+<!--            android:id="@+id/name"-->
+<!--            android:title="@string/name" />-->
+<!--        <item-->
+<!--            android:id="@+id/phone"-->
+<!--            android:title="@string/phone" />-->
+<!--        <item-->
+<!--            android:id="@+id/email"-->
+<!--            android:title="@string/email" />-->
+<!--        <item-->
+<!--            android:id="@+id/group"-->
+<!--            android:title="@string/group" />-->
+<!--    </group>-->
+
+    <group android:id="@+id/options">
+        <item
+            android:id="@+id/changeTheme"
+            android:icon="@drawable/edit"
+            android:title="@string/changeTheme" />
+
+        <item
+            android:id="@+id/changeLanguage"
+            android:icon="@drawable/edit"
+            android:title="@string/changeLanguage" />
+
+<!--        <item-->
+<!--            android:id="@+id/editProfile"-->
+<!--            android:icon="@drawable/edit"-->
+<!--            android:title="" />-->
+<!--        <item-->
+<!--            android:id="@+id/contactPhone"-->
+<!--            android:icon="@drawable/phone"-->
+<!--            android:title="" />-->
+<!--        <item-->
+<!--            android:id="@+id/contactEmail"-->
+<!--            android:icon="@drawable/email"-->
+<!--            android:title="" />-->
+<!--        <item-->
+<!--            android:id="@+id/contactMessage"-->
+<!--            android:icon="@drawable/message"-->
+<!--            android:title="" />-->
+    </group>
+
+</menu>

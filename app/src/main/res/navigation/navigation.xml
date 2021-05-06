@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
-    app:startDestination="@+id/drawer_layout">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@+id/blank">
 
+    <fragment
+        android:id="@+id/tasksFragment"
+        android:name="com.example.semesterapplication.ui.TasksFragment"
+        android:label="@string/taskslist"
+        tools:layout="@layout/fragment_tasks" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.semesterapplication.ui.SettingsFragment"
+        android:label="@string/taskslist"
+        tools:layout="@layout/fragment_tasks" />
+    <fragment
+        android:id="@+id/createTask"
+        android:name="com.example.semesterapplication.ui.CreateTaskFragment"
+        android:label="@string/taskslist"
+        tools:layout="@layout/fragment_tasks" />
 
 
 </navigation>

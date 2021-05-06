@@ -12,4 +12,8 @@
     <string name="phone">Telefon</string>
     <string name="group">Grup</string>
     <string name="logoff">Delogeaza-te</string>
+    <string name="previous">Inapoi</string>
+    <string name="next">Mai departe</string>
+    <string name="cancel">Abandoneaza</string>
+    <string name="save">Salveaza</string>
 </resources>

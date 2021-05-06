@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "8577198357",
+    "project_id": "semesterapp-c500e",
+    "storage_bucket": "semesterapp-c500e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8577198357:android:264c446f53f75231fce11c",
+        "android_client_info": {
+          "package_name": "com.example.semesterapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "8577198357-tbv6a85j1rr2cbg49qav618e1huuic4q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg_k-EgdQ8wCzXqMZgLYWtH0I2QjqqEyc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "8577198357-tbv6a85j1rr2cbg49qav618e1huuic4q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

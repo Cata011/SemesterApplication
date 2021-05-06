@@ -2,27 +2,52 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/family"
-        android:icon="@drawable/square"
-        android:title="@string/family" />
+        android:id="@+id/delete"
+        android:icon="@drawable/trash"
+        android:title="" />
 
     <item
-        android:id="@+id/friends"
-        android:icon="@drawable/square"
-        android:title="@string/friends" />
+        android:id="@+id/share"
+        android:icon="@drawable/share"
+        android:title="" />
 
     <item
-        android:id="@+id/work"
-        android:icon="@drawable/square"
-        android:title="@string/job" />
+        android:id="@+id/flag"
+        android:icon="@drawable/flag"
+        android:title="" />
 
     <item
-        android:id="@+id/custom"
-        android:icon="@drawable/square"
-        android:title="@string/custom" />
+        android:id="@+id/edit"
+        android:icon="@drawable/edit"
+        android:title="" />
 
     <item
-        android:id="@+id/own"
-        android:icon="@drawable/square"
-        android:title="@string/own" />
+        android:id="@+id/add"
+        android:icon="@drawable/add"
+        android:title="" />
+
+<!--    <item-->
+<!--        android:id="@+id/family"-->
+<!--        android:icon="@drawable/square"-->
+<!--        android:title="@string/family" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/friends"-->
+<!--        android:icon="@drawable/square"-->
+<!--        android:title="@string/friends" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/work"-->
+<!--        android:icon="@drawable/square"-->
+<!--        android:title="@string/job" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/custom"-->
+<!--        android:icon="@drawable/square"-->
+<!--        android:title="@string/custom" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/own"-->
+<!--        android:icon="@drawable/square"-->
+<!--        android:title="@string/own" />-->
 </menu>
