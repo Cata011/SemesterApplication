@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.semesterapplication.R;
+import com.example.semesterapplication.data.repo.TaskViewModel;
 import com.example.semesterapplication.model.Task;
 
 import java.util.ArrayList;
@@ -39,8 +40,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull TaskAdapter.ViewHolder holder, int position) {
-        holder.PLACEHOLDER_SOMESTUFF.setText(tasks.get(position).getPLACEHOLDER_SOMESTUFF());
-        holder.PLACEHOLDER_SOMEOTHERSTUFF.setText(tasks.get(position).getPLACEHOLDER_SOMEOTHERSTUFF());
+        holder.content.setText(tasks.get(position).getContent());
 
         //needed for menu next to item
         holder.buttonViewOption.setOnClickListener(new View.OnClickListener() {
@@ -82,13 +82,11 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         TextView buttonViewOption;
-        TextView PLACEHOLDER_SOMESTUFF;
-        TextView PLACEHOLDER_SOMEOTHERSTUFF;
+        TextView content;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            PLACEHOLDER_SOMESTUFF = itemView.findViewById(R.id.textView);
-            PLACEHOLDER_SOMEOTHERSTUFF = itemView.findViewById(R.id.textView1);
+            content = itemView.findViewById(R.id.textView);
             buttonViewOption = itemView.findViewById(R.id.textViewOptions);
             itemView.setOnClickListener(this);
         }

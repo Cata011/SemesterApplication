@@ -7,19 +7,11 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:padding="75dp"
-        android:text="Some stuff here" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:padding="75dp"
-        android:text="Some other stuff here" />
+        android:padding="10dp"
+        android:text="" />
 
     <TextView
         android:id="@+id/textViewOptions"

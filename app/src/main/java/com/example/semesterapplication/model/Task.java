@@ -1,19 +1,31 @@
 package com.example.semesterapplication.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "task_table")
 public class Task {
-    private String PLACEHOLDER_SOMESTUFF;
-    private String PLACEHOLDER_SOMEOTHERSTUFF;
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    private String content;
 
-    public Task(String PLACEHOLDER_SOMESTUFF, String PLACEHOLDER_SOMEOTHERSTUFF) {
-        this.PLACEHOLDER_SOMESTUFF = PLACEHOLDER_SOMESTUFF;
-        this.PLACEHOLDER_SOMEOTHERSTUFF = PLACEHOLDER_SOMEOTHERSTUFF;
+    public Task(String content) {
+       this.content = content;
     }
 
-    public String getPLACEHOLDER_SOMESTUFF() {
-        return PLACEHOLDER_SOMESTUFF;
+    public int getId() {
+        return id;
     }
 
-    public String getPLACEHOLDER_SOMEOTHERSTUFF() {
-        return PLACEHOLDER_SOMEOTHERSTUFF;
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
     }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -16,6 +17,7 @@ import android.widget.Checkable;
 
 import com.example.semesterapplication.R;
 import com.example.semesterapplication.data.adapter.TaskAdapter;
+import com.example.semesterapplication.data.repo.TaskViewModel;
 import com.example.semesterapplication.model.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -26,26 +28,36 @@ public class TasksFragment extends Fragment implements TaskAdapter.OnListItemCli
     RecyclerView rv;
     TaskAdapter taskAdapter;
     ArrayList<Task> dummyTasks;
+    ArrayList<Task> tasks;
     Task selectedTask;
+    TaskViewModel taskViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_tasks, container, false);
         rv = view.findViewById(R.id.rv);
         rv.hasFixedSize();
         rv.setLayoutManager(new LinearLayoutManager(requireActivity())); //TODO: remember this
+        tasks = new ArrayList<>();
+        taskViewModel = new ViewModelProvider(this).get(TaskViewModel.class);
+        taskViewModel.getAllTasks().observe(getViewLifecycleOwner(), tasks -> { //TODO: remember getViewLifecycleOwner
+            if(!tasks.isEmpty())
+            {
+                //TODO
+            }
+        });
 
         dummyTasks = new ArrayList<>();
-        dummyTasks.add(new Task("nimic1", "nimic2"));
-        dummyTasks.add(new Task("nimic11", "nimic2"));
-        dummyTasks.add(new Task("nimic111", "nimic2"));
-        dummyTasks.add(new Task("nimic1111", "nimic2"));
-        dummyTasks.add(new Task("nimic1111", "nimic2"));
-        dummyTasks.add(new Task("nimic11111", "nimic2"));
-        dummyTasks.add(new Task("nimic111111", "nimic2"));
-        dummyTasks.add(new Task("nimic1111111", "nimic2"));
-        dummyTasks.add(new Task("nimic11111111", "nimic2"));
+        dummyTasks.add(new Task("nimic1"));
+        dummyTasks.add(new Task("nimic11"));
+        dummyTasks.add(new Task("nimic111"));
+        dummyTasks.add(new Task("nimic1111"));
+        dummyTasks.add(new Task("nimic1111"));
+        dummyTasks.add(new Task("nimic11111"));
+        dummyTasks.add(new Task("nimic111111"));
+        dummyTasks.add(new Task("nimic1111111"));
+        dummyTasks.add(new Task("nimic11111111"));
 
-        taskAdapter = new TaskAdapter(dummyTasks, this);
+        taskAdapter = new TaskAdapter(dummyTasks, this);    //TODO: change with tasks
         rv.setAdapter(taskAdapter);
 
         return view;
