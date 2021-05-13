@@ -16,4 +16,8 @@
     <string name="next">Mai departe</string>
     <string name="cancel">Abandoneaza</string>
     <string name="save">Salveaza</string>
+    <string name="tasksList">Lista cu activitati</string>
+    <string name="settings">Setari</string>
+    <string name="changeSettings">Schimba setari</string>
+    <string name="createTask">Creeaza o activitate</string>
 </resources>
