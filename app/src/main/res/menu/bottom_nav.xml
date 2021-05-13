@@ -2,28 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/delete"
-        android:icon="@drawable/trash"
-        android:title="" />
+        android:id="@+id/tasksFragment"
+        android:icon="@drawable/list"
+        android:title= "@string/tasksList" />
+
 
     <item
-        android:id="@+id/share"
-        android:icon="@drawable/share"
-        android:title="" />
-
-    <item
-        android:id="@+id/flag"
-        android:icon="@drawable/flag"
-        android:title="" />
-
-    <item
-        android:id="@+id/edit"
-        android:icon="@drawable/edit"
-        android:title="" />
-
-    <item
-        android:id="@+id/add"
+        android:id="@+id/createTask"
         android:icon="@drawable/add"
-        android:title="" />
+        android:title="@string/addTask" />
 
 </menu>

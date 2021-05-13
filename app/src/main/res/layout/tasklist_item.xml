@@ -16,8 +16,19 @@
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
         android:padding="75dp"
         android:text="Some other stuff here" />
+
+    <TextView
+        android:id="@+id/textViewOptions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_weight="0"
+        android:padding="10dp"
+        android:text="&#8942;"
+        android:textAppearance="?android:textAppearanceLarge" />
 </LinearLayout>

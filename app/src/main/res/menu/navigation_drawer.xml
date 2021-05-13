@@ -10,9 +10,9 @@
             android:title="@string/changeSettings" />
 
         <item
-            android:id="@+id/createTask"
-            android:icon="@drawable/edit"
-            android:title="@string/createTask" />
+            android:id="@+id/share"
+            android:icon="@drawable/share"
+            android:title="@string/share" />
 
     </group>
 

@@ -20,4 +20,6 @@
     <string name="settings">Setari</string>
     <string name="changeSettings">Schimba setari</string>
     <string name="createTask">Creeaza o activitate</string>
+    <string name="emailIntent">Alege tipul de email:</string>
+    <string name="addTask">Adauga o activitate</string>
 </resources>

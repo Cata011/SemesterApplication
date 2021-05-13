@@ -1,9 +1,12 @@
 package com.example.semesterapplication.data.adapter;
 
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,8 +20,9 @@ import java.util.ArrayList;
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     private ArrayList<Task> tasks;
-   // public ArrayList<Task> tasks1;
+    // public ArrayList<Task> tasks1;
     final private OnListItemClickListener onListItemClickListener;
+
 
     public TaskAdapter(ArrayList<Task> tasks, OnListItemClickListener onListItemClickListener) {
         this.tasks = tasks;
@@ -37,6 +41,37 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull TaskAdapter.ViewHolder holder, int position) {
         holder.PLACEHOLDER_SOMESTUFF.setText(tasks.get(position).getPLACEHOLDER_SOMESTUFF());
         holder.PLACEHOLDER_SOMEOTHERSTUFF.setText(tasks.get(position).getPLACEHOLDER_SOMEOTHERSTUFF());
+
+        //needed for menu next to item
+        holder.buttonViewOption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //creating a popup menu
+                PopupMenu popup = new PopupMenu(view.getContext(), holder.buttonViewOption);
+                //inflating menu from xml resource
+                popup.inflate(R.menu.options_menu);
+                //adding click listener
+                popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.delete:
+                                tasks.remove(position);
+                                return true;
+                            case R.id.flag:
+
+                                return true;
+                            default:
+                                return false;
+                        }
+                    }
+                });
+                //displaying the popup
+                popup.show();
+
+            }
+        });
     }
 
     @Override
@@ -46,6 +81,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+        TextView buttonViewOption;
         TextView PLACEHOLDER_SOMESTUFF;
         TextView PLACEHOLDER_SOMEOTHERSTUFF;
 
@@ -53,6 +89,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
             super(itemView);
             PLACEHOLDER_SOMESTUFF = itemView.findViewById(R.id.textView);
             PLACEHOLDER_SOMEOTHERSTUFF = itemView.findViewById(R.id.textView1);
+            buttonViewOption = itemView.findViewById(R.id.textViewOptions);
             itemView.setOnClickListener(this);
         }
 
