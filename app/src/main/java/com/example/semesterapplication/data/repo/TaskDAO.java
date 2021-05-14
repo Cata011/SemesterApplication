@@ -5,6 +5,7 @@ import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import com.example.semesterapplication.model.Task;
 
@@ -20,4 +21,7 @@ public interface TaskDAO {
 
     @Query("Select * FROM task_table")
     LiveData<List<Task>> getAllTasks();
+
+    @Update
+    void markAsFinished(Task task);
 }

@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData;
 
 import com.example.semesterapplication.model.Task;
 
+import java.lang.reflect.Array;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -16,8 +17,7 @@ public class TaskRepo {
     private final LiveData<List<Task>> allTasks;
     private final ExecutorService executorService;
 
-    private TaskRepo(Application application)
-    {
+    private TaskRepo(Application application) {
         TaskDatabase database = TaskDatabase.getInstance(application);
         taskDAO = database.taskDAO();
         allTasks = taskDAO.getAllTasks();
@@ -31,17 +31,21 @@ public class TaskRepo {
         return instance;
     }
 
-    public LiveData<List<Task>> getAllNotes() {
+    public LiveData<List<Task>> getAllTasks() {
         return allTasks;
     }
 
-    public void insert(Task note) {
-        executorService.execute(() -> taskDAO.insert(note));
+    public void insert(Task task) {
+        executorService.execute(() -> taskDAO.insert(task));
     }
 
-    public void delete(Task task)
-    {
+    public void delete(Task task) {
         executorService.execute(() -> taskDAO.delete(task));
     }
 
+    public void markAsFinished(Task task) {
+//        Task task1 = allTasks.getValue().get(task.getId());
+//        task1.setFinished(true);
+//        executorService.execute(() -> taskDAO.markAsFinished(task1)); TODO
+    }
 }

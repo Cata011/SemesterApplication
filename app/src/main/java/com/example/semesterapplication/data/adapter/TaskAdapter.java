@@ -1,11 +1,10 @@
 package com.example.semesterapplication.data.adapter;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Filter;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
@@ -13,21 +12,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.semesterapplication.R;
-import com.example.semesterapplication.data.repo.TaskViewModel;
 import com.example.semesterapplication.model.Task;
+import com.example.semesterapplication.viewModel.TaskViewModel;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
-    private ArrayList<Task> tasks;
+    private List<Task> tasks;
     // public ArrayList<Task> tasks1;
     final private OnListItemClickListener onListItemClickListener;
+    final private TaskViewModel taskViewModel;
 
 
-    public TaskAdapter(ArrayList<Task> tasks, OnListItemClickListener onListItemClickListener) {
+    public TaskAdapter(List<Task> tasks, OnListItemClickListener onListItemClickListener, TaskViewModel taskViewModel) {
         this.tasks = tasks;
         this.onListItemClickListener = onListItemClickListener;
+        this.taskViewModel = taskViewModel;
     }
 
     @NonNull
@@ -41,6 +42,9 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull TaskAdapter.ViewHolder holder, int position) {
         holder.content.setText(tasks.get(position).getContent());
+        if (taskViewModel.getAllTasks().getValue().get(position).isFinished()) {
+            holder.content.setBackgroundColor(Color.parseColor("#58eb34"));
+        }
 
         //needed for menu next to item
         holder.buttonViewOption.setOnClickListener(new View.OnClickListener() {
@@ -57,10 +61,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
                     public boolean onMenuItemClick(MenuItem item) {
                         switch (item.getItemId()) {
                             case R.id.delete:
-                                tasks.remove(position);
+                                taskViewModel.delete(tasks.get(position));
                                 return true;
                             case R.id.flag:
-
+                                taskViewModel.markAsFinished(tasks.get(position));
                                 return true;
                             default:
                                 return false;

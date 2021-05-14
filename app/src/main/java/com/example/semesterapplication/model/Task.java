@@ -8,9 +8,11 @@ public class Task {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String content;
+    private boolean finished;
 
-    public Task(String content) {
+    public Task(String content, boolean finished) {
        this.content = content;
+       this.finished = finished;
     }
 
     public int getId() {
@@ -27,5 +29,13 @@ public class Task {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public boolean isFinished() {
+        return finished;
+    }
+
+    public void setFinished(boolean finished) {
+        this.finished = finished;
     }
 }
