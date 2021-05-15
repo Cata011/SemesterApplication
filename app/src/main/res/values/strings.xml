@@ -40,6 +40,8 @@
     <string name="delete">Delete</string>
     <string name="mark">Mark</string>
     <string name="writeTask">Write a task...</string>
+    <string name="deleteAll">Delete all tasks</string>
+    <string name="shareSchedule">Share schedule</string>
 
 
 </resources>

@@ -6,7 +6,20 @@
         android:id="@+id/search_filter"
         android:icon="@drawable/search"
         android:title=""
-        app:showAsAction="ifRoom|collapseActionView"
+        app:showAsAction="always"
         app:actionViewClass="android.widget.SearchView" />
+
+    <item
+        android:id="@+id/deleteAll"
+        android:icon="@drawable/trash"
+        android:title="@string/deleteAll"
+        app:showAsAction="never"
+        />
+
+    <item
+        android:id="@+id/share"
+        android:icon="@drawable/share"
+        android:title="@string/shareSchedule"
+        app:showAsAction="never"/>
 
 </menu>

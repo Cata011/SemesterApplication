@@ -24,4 +24,7 @@ public interface TaskDAO {
 
     @Update
     void markAsFinished(Task task);
+
+    @Query("DELETE FROM task_table")
+    void deleteAllTasks();
 }

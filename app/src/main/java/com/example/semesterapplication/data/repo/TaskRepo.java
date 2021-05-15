@@ -44,8 +44,11 @@ public class TaskRepo {
     }
 
     public void markAsFinished(Task task) {
-//        Task task1 = allTasks.getValue().get(task.getId());
-//        task1.setFinished(true);
-//        executorService.execute(() -> taskDAO.markAsFinished(task1)); TODO
+        task.setFinished(true);
+        executorService.execute(() -> taskDAO.markAsFinished(task));
+    }
+
+    public void deleteAllTasks() {
+        executorService.execute(taskDAO::deleteAllTasks);
     }
 }

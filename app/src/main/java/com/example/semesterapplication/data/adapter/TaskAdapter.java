@@ -5,6 +5,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.PopupMenu;
 import android.widget.TextView;
 
@@ -15,18 +17,20 @@ import com.example.semesterapplication.R;
 import com.example.semesterapplication.model.Task;
 import com.example.semesterapplication.viewModel.TaskViewModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     private List<Task> tasks;
-    // public ArrayList<Task> tasks1;
+     public List<Task> filtered;
     final private OnListItemClickListener onListItemClickListener;
     final private TaskViewModel taskViewModel;
 
 
     public TaskAdapter(List<Task> tasks, OnListItemClickListener onListItemClickListener, TaskViewModel taskViewModel) {
         this.tasks = tasks;
+        this.filtered = tasks;
         this.onListItemClickListener = onListItemClickListener;
         this.taskViewModel = taskViewModel;
     }
@@ -88,9 +92,11 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         TextView buttonViewOption;
         TextView content;
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             content = itemView.findViewById(R.id.textView);
+
             buttonViewOption = itemView.findViewById(R.id.textViewOptions);
             itemView.setOnClickListener(this);
         }
@@ -105,44 +111,43 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         void onListItemClick(int clickedItemIndex);
     }
 
+
+//    //taken from https://stackoverflow.com/questions/30398247/how-to-filter-a-recyclerview-with-a-searchview
 //    @Override
-//    public Filter getFilter() {         //taken from http://programmingroot.com/android-recyclerview-search-filter-tutorial-with-example/
+//    public Filter getFilter() {
 //        return new Filter() {
-//            @Override
-//            protected FilterResults performFiltering(CharSequence constraint) {
-//
-//                String charString = constraint.toString();
-//
-//                if (charString.isEmpty()){
-//                    tasks = tasks1;
-//                }else{
-//
-//                    ArrayList<com.example.semesterapplication.old.Task> filterList = new ArrayList<>();
-//
-//                    for (com.example.semesterapplication.old.Task data : tasks1){
-//
-//                        if (data.getPLACEHOLDER_SOMESTUFF().toLowerCase().contains(charString)){
-//                            filterList.add(data);
-//                        }
-//                    }
-//
-//                    tasks = filterList;
-//
-//                }
-//
-//                FilterResults filterResults = new FilterResults();
-//                filterResults.values = tasks;
-//
-//                return filterResults;
-//            }
-//
+//            @SuppressWarnings("unchecked")
 //            @Override
 //            protected void publishResults(CharSequence constraint, FilterResults results) {
-//
-//                tasks = (ArrayList<com.example.semesterapplication.old.Task>) results.values;
+//                filtered = (List<Task>) results.values;
 //                notifyDataSetChanged();
 //            }
-//        };
 //
+//            @Override
+//            protected FilterResults performFiltering(CharSequence constraint) {
+//                List<Task> filteredResults = null;
+//                if (constraint.length() == 0) {
+//                    filteredResults = tasks;
+//                } else {
+//                    filteredResults = getFilteredResults(constraint.toString().toLowerCase());
+//                }
+//
+//                FilterResults results = new FilterResults();
+//                results.values = filteredResults;
+//
+//                return results;
+//            }
+//        };
+//    }
+//
+//    protected List<Task> getFilteredResults(String constraint) {
+//        List<Task> results = new ArrayList<>();
+//
+//        for (Task item : tasks) {
+//            if (item.getContent().toLowerCase().contains(constraint)) {
+//                results.add(item);
+//            }
+//        }
+//        return results;
 //    }
 }

@@ -3,8 +3,10 @@ package com.example.semesterapplication.model;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
+
 @Entity(tableName = "task_table")
-public class Task {
+public class Task implements Serializable {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private String content;

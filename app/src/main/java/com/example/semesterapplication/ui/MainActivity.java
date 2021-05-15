@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
@@ -16,16 +17,22 @@ import androidx.navigation.ui.NavigationUI;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 
 import com.example.semesterapplication.R;
 import com.example.semesterapplication.model.Task;
+import com.example.semesterapplication.viewModel.TaskViewModel;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     NavigationView navigationView;
     BottomNavigationView bottomNavigationView;
     Toolbar toolbar;
+    TaskViewModel taskViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigation_drawer);
         bottomNavigationView = findViewById(R.id.bottom_nav_view);
         toolbar = findViewById(R.id.toolbar);
+        taskViewModel = new ViewModelProvider(this).get(TaskViewModel.class);
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         setSupportActionBar(toolbar);
@@ -59,8 +68,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(bottomNavigationView, navController);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-        //((TasksFragment) getSupportFragmentManager().findFragmentById(R.id.tasksFragment)).optionSelected();
 
     }
 
@@ -80,18 +87,23 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.share) {
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.putExtra(Intent.EXTRA_EMAIL, "");
-            intent.putExtra(Intent.EXTRA_SUBJECT, "");
-            intent.putExtra(Intent.EXTRA_TEXT, ((TasksFragment) getSupportFragmentManager().findFragmentById(R.id.tasksFragment)).dummyTasks);
-
-            startActivity(Intent.createChooser(intent, String.valueOf(R.string.emailIntent)));
-            return true;
-        }
-        else {
-            NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
-            return NavigationUI.onNavDestinationSelected(item, navController) || super.onOptionsItemSelected(item);
+        switch (item.getItemId()) {
+            case R.id.deleteAll:
+                taskViewModel.deleteAllTasks();
+                return true;
+            case R.id.share:
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL, "");
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Here is my schedule");
+                intent.putExtra(Intent.EXTRA_TEXT, taskViewModel.formattedString());
+                startActivity(Intent.createChooser(intent, "Choose app"));
+                return true;
+            default:
+                NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
+                return NavigationUI.onNavDestinationSelected(item, navController) || super.onOptionsItemSelected(item);
         }
     }
+
+
 }

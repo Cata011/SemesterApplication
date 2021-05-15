@@ -9,11 +9,6 @@
             android:icon="@drawable/edit"
             android:title="@string/changeSettings" />
 
-        <item
-            android:id="@+id/share"
-            android:icon="@drawable/share"
-            android:title="@string/share" />
-
     </group>
 
 </menu>
