@@ -1,5 +1,35 @@
 # SemesterApplication
 
+V2 : after 06.05.2021
+
+Description:
+
+The application represents a simple scheduler or TODO list containing the expected features for such an app. The motivation behind the choice is the common use and usefulness of a scheduler for everyday use. My goal is to create a second and simpler version of the first version (detailed below) that can run and be presented in an efficient manner. This version is focused on offline use and does not present any of the online features described at the start of this project. The app uses Android 6.0. 
+
+Requirements (implemented 7/13):
+
+Must have: 
+1)	As a user, I want to be able to visualize a list of tasks so that I can be aware of what I need to do. - implemented
+2)	As a user, I want to be able to create a task so that I can keep my schedule updated. -implemented
+3)	As a user, I want to be able to delete tasks so that I do not have outdated data in my task list. – implemented
+Should have:
+4)	As a user, I want to be able to mark tasks as completed so that I know which tasks are finished and which are not. – implemented
+5)	As a user, I want to be able to delete all tasks at once so that I can easily my task list if I want to. – implemented
+6)	As a user, I want to be able to share my schedule by email so that I can let my friends or family know my schedule. – implemented
+7)	As a user, I want to be able to search for tasks so that I can easily find one if I have too many in my list. – not implemented
+Could have:
+8)	As a user, I want to be able to send feedback to the application developer so that I can provide tips on how to improve the application. – implemented
+9)	As a user, I want to change the language of the application in order to have options on the language of the application. – not implemented
+10)	As a user, I want to change the theme of the application in order to have variation of the colour palette of the application. -not implemented
+11)	As a user, I want to filter tasks by due date so that I know which tasks I need to do first. – not implemented
+12)	As a user, I want to receive notifications for unfinished tasks so that I am reminded of what I need to do. - not implemented
+Won’t have: 
+13)	As a user, I want to be able to create an account and store my data in cloud so that I can always retrieve it on any device. – not implemented
+
+_______________________________________________________________________________________________________________________________________________________________________________
+
+(Old application description and requirement - before 06.05.2021 feedback session)
+
 Description of the application:
 
 This application is a combination of multiple features that we use daily on our phones and aims at gathering them all in order to make our everyday life better regarding time and how we use it. The inspiration behind it also comes from the way I use my schedule daily and how I usually want to interact with my friends and family when I have work to do. From what I noticed about people around me and my experiences, not everyone wants to unnecessarily be disturbed or is comfortable with potentially disturbing their friends or family. My goal is to provide another option for people to organize and be aware of what others are doing.
