@@ -6,7 +6,7 @@ Description:
 
 The application represents a simple scheduler or TODO list containing the expected features for such an app. The motivation behind the choice is the common use and usefulness of a scheduler for everyday use. My goal is to create a second and simpler version of the first version (detailed below) that can run and be presented in an efficient manner. This version is focused on offline use and does not present any of the online features described at the start of this project. The app uses Android 6.0. 
 
-Requirements (implemented 7/13):
+Requirements (implemented 8/13):
 
 Must have: 
 1)	As a user, I want to be able to visualize a list of tasks so that I can be aware of what I need to do. - implemented
@@ -26,7 +26,7 @@ Could have:
 9)	As a user, I want to change the language of the application in order to have options on the language of the application. – not implemented
 10)	As a user, I want to change the theme of the application in order to have variation of the colour palette of the application. -not implemented
 11)	As a user, I want to filter tasks by due date so that I know which tasks I need to do first. – not implemented
-12)	As a user, I want to receive notifications for unfinished tasks so that I am reminded of what I need to do. - not implemented
+12)	As a user, I want to receive notifications for unfinished tasks so that I am reminded of what I need to do. - implemented
 
 Won’t have: 
 
