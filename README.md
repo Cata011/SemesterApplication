@@ -28,7 +28,7 @@ Won’t have:
 
 _______________________________________________________________________________________________________________________________________________________________________________
 
-(Old application description and requirement - before 06.05.2021 feedback session)
+(Old application description and requirements - before 06.05.2021 feedback session)
 
 Description of the application:
 
