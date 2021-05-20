@@ -7,7 +7,7 @@
         <item
             android:id="@+id/settingsFragment"
             android:icon="@drawable/edit"
-            android:title="@string/changeSettings" />
+            android:title="@string/options" />
 
     </group>
 

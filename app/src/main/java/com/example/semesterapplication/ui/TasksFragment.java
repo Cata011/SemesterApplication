@@ -25,7 +25,6 @@ public class TasksFragment extends Fragment implements TaskAdapter.OnListItemCli
 
     RecyclerView rv;
     TaskAdapter taskAdapter;
-//    MutableLiveData<List<Task>> tasks;
     TaskViewModel taskViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,7 +37,6 @@ public class TasksFragment extends Fragment implements TaskAdapter.OnListItemCli
             taskAdapter = new TaskAdapter(tasks1, this, taskViewModel);
             rv.setAdapter(taskAdapter);
         });
-
         return view;
     }
 
@@ -46,6 +44,7 @@ public class TasksFragment extends Fragment implements TaskAdapter.OnListItemCli
     public void onListItemClick(int clickedItemIndex) {
         //find something to do
     }
+
 
 
 

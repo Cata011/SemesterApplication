@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SemesterApplication</string>
     <string name="login">Logheaza-te</string>
     <string name="signup">Inregistreaza-te</string>
     <string name="family">Familie</string>
@@ -22,4 +21,11 @@
     <string name="createTask">Creeaza o activitate</string>
     <string name="emailIntent">Alege tipul de email:</string>
     <string name="addTask">Adauga o activitate</string>
+    <string name="share">Distribuie</string>
+    <string name="delete">Sterge</string>
+    <string name="mark">Marcheaza</string>
+    <string name="writeTask">Scrie o activitate...</string>
+    <string name="deleteAll">Sterge toate activitatile</string>
+    <string name="shareSchedule">Distribuie agenda</string>
+    <string name="options">Optiuni</string>
 </resources>

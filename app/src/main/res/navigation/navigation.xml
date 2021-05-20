@@ -14,7 +14,7 @@
         android:id="@+id/settingsFragment"
         android:name="com.example.semesterapplication.ui.SettingsFragment"
         android:label="@string/tasksList"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="" />
     <fragment
         android:id="@+id/createTask"
         android:name="com.example.semesterapplication.ui.CreateTaskFragment"

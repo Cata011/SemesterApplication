@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         navigationView = findViewById(R.id.navigation_drawer);
         bottomNavigationView = findViewById(R.id.bottom_nav_view);
         toolbar = findViewById(R.id.toolbar);
+        toolbar.setBackgroundColor(getResources().getColor(R.color.myColour1));
         taskViewModel = new ViewModelProvider(this).get(TaskViewModel.class);
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment);

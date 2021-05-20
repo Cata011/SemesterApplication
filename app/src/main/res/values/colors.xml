@@ -8,6 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="myColour1">#7F7FD5</color>
+    <color name="myColour2">#eeeeee</color>
+
     <color name="whiteLoginTeal">#29f2d7</color>
     <color name="whiteLoginGreen">#53ed91</color>
     <color name="whiteLoginPurple">#976DD0</color>

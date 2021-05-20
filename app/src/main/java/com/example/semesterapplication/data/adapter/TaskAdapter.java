@@ -23,14 +23,12 @@ import java.util.List;
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
 
     private List<Task> tasks;
-     public List<Task> filtered;
     final private OnListItemClickListener onListItemClickListener;
     final private TaskViewModel taskViewModel;
 
 
     public TaskAdapter(List<Task> tasks, OnListItemClickListener onListItemClickListener, TaskViewModel taskViewModel) {
         this.tasks = tasks;
-        this.filtered = tasks;
         this.onListItemClickListener = onListItemClickListener;
         this.taskViewModel = taskViewModel;
     }
@@ -47,7 +45,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull TaskAdapter.ViewHolder holder, int position) {
         holder.content.setText(tasks.get(position).getContent());
         if (taskViewModel.getAllTasks().getValue().get(position).isFinished()) {
-            holder.content.setBackgroundColor(Color.parseColor("#58eb34"));
+            holder.content.setBackgroundResource(R.drawable.rounded);
         }
 
         //needed for menu next to item
@@ -110,44 +108,4 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
     public interface OnListItemClickListener {
         void onListItemClick(int clickedItemIndex);
     }
-
-
-//    //taken from https://stackoverflow.com/questions/30398247/how-to-filter-a-recyclerview-with-a-searchview
-//    @Override
-//    public Filter getFilter() {
-//        return new Filter() {
-//            @SuppressWarnings("unchecked")
-//            @Override
-//            protected void publishResults(CharSequence constraint, FilterResults results) {
-//                filtered = (List<Task>) results.values;
-//                notifyDataSetChanged();
-//            }
-//
-//            @Override
-//            protected FilterResults performFiltering(CharSequence constraint) {
-//                List<Task> filteredResults = null;
-//                if (constraint.length() == 0) {
-//                    filteredResults = tasks;
-//                } else {
-//                    filteredResults = getFilteredResults(constraint.toString().toLowerCase());
-//                }
-//
-//                FilterResults results = new FilterResults();
-//                results.values = filteredResults;
-//
-//                return results;
-//            }
-//        };
-//    }
-//
-//    protected List<Task> getFilteredResults(String constraint) {
-//        List<Task> results = new ArrayList<>();
-//
-//        for (Task item : tasks) {
-//            if (item.getContent().toLowerCase().contains(constraint)) {
-//                results.add(item);
-//            }
-//        }
-//        return results;
-//    }
 }

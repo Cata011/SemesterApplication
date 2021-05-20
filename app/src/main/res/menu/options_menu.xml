@@ -12,9 +12,4 @@
             android:icon="@drawable/flag"
             android:title="@string/mark" />
 
-<!--        <item-->
-<!--            android:id="@+id/edit"-->
-<!--            android:icon="@drawable/edit"-->
-<!--            android:title="" />-->
-
 </menu>
